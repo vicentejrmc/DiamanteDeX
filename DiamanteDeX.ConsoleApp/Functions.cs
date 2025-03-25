@@ -58,6 +58,8 @@
                     escreverX -= 2;
                 }
             }
+
+            Console.WriteLine();
         }
     }
 }

@@ -10,21 +10,37 @@
 
         static void Main(string[] args)
         {
+            while (true)
+            {
+                ExibirCabecalho();
+
+                Console.Write("Digite um número ímpar: ");
+                int numeroDigitado = Convert.ToInt32(Console.ReadLine());
+                Console.WriteLine();
+
+                numeroDigitado = Functions.NumeroEhPositivo(numeroDigitado);
+
+                numeroDigitado = Functions.ValidarNumeroImpar(numeroDigitado);
+
+                Functions.ApresentarDiamante(numeroDigitado);
+
+                Console.Write("Deseja Tentar um novo Diamante? S/N: ");
+                string TentarUmNovo = Console.ReadLine().ToUpper();
+
+                if (TentarUmNovo != "S")
+                    break;
+            }
+
+
+           
+        }     
+        public static void ExibirCabecalho()
+        {
+            Console.Clear();
             Console.WriteLine("-------------------------");
             Console.WriteLine("----- Diamante de X -----");
             Console.WriteLine("-------------------------\n");
-
-            Console.Write("Digite um número ímpar: ");
-            int numeroDigitado = Convert.ToInt32(Console.ReadLine());
-
-            numeroDigitado = Functions.NumeroEhPositivo(numeroDigitado);
-
-            numeroDigitado = Functions.ValidarNumeroImpar(numeroDigitado);
-
-            Functions.ApresentarDiamante(numeroDigitado);
-
-            Console.ReadLine();
-        }     
+        }
 
     }
 }
