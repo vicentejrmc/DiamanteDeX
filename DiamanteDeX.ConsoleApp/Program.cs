@@ -14,27 +14,43 @@
             Console.WriteLine("----- Diamante de X -----");
             Console.WriteLine("-------------------------\n");
 
-            Console.WriteLine("Digite um número ímpar: ");
+            Console.Write("Digite um número ímpar: ");
             int numeroDigitado = Convert.ToInt32(Console.ReadLine());
 
-            ValidarNumeroImpar(numeroDigitado);
+            Functions.ValidarNumeroImpar(numeroDigitado);
 
-
+            ApresentarDiamante(numeroDigitado);
 
             Console.ReadLine();
         }
 
-        public static int ValidarNumeroImpar(int numeroDigitado)
+        public static void ApresentarDiamante(int numeroDigitado)
         {
-            bool numeroImpar = numeroDigitado % 2 == 0;
-
-            while (numeroImpar)
+            int espacoEmBranco = numeroDigitado / 2;
+            int escreverX = 1;
+            for (int i = 0; i < numeroDigitado; i++)
             {
-                Console.WriteLine("O numero digitado é invalido! digite um numero ÍMPAR: ");
-                numeroDigitado = Convert.ToInt32(Console.ReadLine());
-                numeroImpar = numeroDigitado % 2 == 0;
+                for (int j = 0; j < espacoEmBranco; j++)
+                {
+                    Console.Write(" ");
+                }
+                for (int j = 0; j < escreverX; j++)
+                {
+                    Console.Write("X");
+                }
+                Console.WriteLine();
+                if (i < numeroDigitado / 2)
+                {
+                    espacoEmBranco--;
+                    escreverX += 2;
+                }
+                else
+                {
+                    espacoEmBranco++;
+                    escreverX -= 2;
+                }
             }
-            return numeroDigitado;
         }
+
     }
 }
