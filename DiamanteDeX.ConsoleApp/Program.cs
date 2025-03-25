@@ -17,17 +17,14 @@
             Console.Write("Digite um número ímpar: ");
             int numeroDigitado = Convert.ToInt32(Console.ReadLine());
 
-            Functions.NumeroEhPositivo(numeroDigitado);
+            numeroDigitado = Functions.NumeroEhPositivo(numeroDigitado);
 
-            Functions.ValidarNumeroImpar(numeroDigitado);
+            numeroDigitado = Functions.ValidarNumeroImpar(numeroDigitado);
 
             Functions.ApresentarDiamante(numeroDigitado);
 
             Console.ReadLine();
-        }
-
-        
-       
+        }     
 
     }
 }

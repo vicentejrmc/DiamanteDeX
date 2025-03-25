@@ -15,17 +15,20 @@
             return numeroDigitado;
         }
 
-
         public static int NumeroEhPositivo(int numeroDigitado)
         {
-            bool numeroEhPositivo = numeroDigitado < 0;
+            bool numeroEhPositivo = true;
+            if (numeroDigitado > 0)
+                numeroEhPositivo = false;
 
             while (numeroEhPositivo)
             {
                 Console.Write("Numero Invalido! Digite um numero Ímpar Positivo: ");
                 numeroDigitado = Convert.ToInt32(Console.ReadLine());
-            }
 
+                if (numeroDigitado > 0)
+                    break;
+            }
             return numeroDigitado;
         }
 
