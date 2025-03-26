@@ -1,20 +1,13 @@
 ﻿namespace DiamanteDeX.ConsoleApp
 {
-    internal class Functions
+    internal class Diamante
     {
         public static int numeroDigitado;
-        public static void ExibirCabecalho()
-        {
-            Console.Clear();
-            Console.WriteLine("-------------------------");
-            Console.WriteLine("----- Diamante de X -----");
-            Console.WriteLine("-------------------------\n");
-        }
-
         public static int LerNumero()
         {
             Console.Write("Digite um número ímpar Positivo: ");
             numeroDigitado = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine();
 
             return numeroDigitado;
         }
@@ -30,7 +23,7 @@
                 numeroImpar = numeroDigitado % 2 == 0;
                 Console.Clear();
 
-                ExibirCabecalho();
+                StringsDeSistema.ExibirCabecalho();
             }
             return numeroDigitado;
         }
@@ -47,7 +40,7 @@
                 numeroDigitado = Convert.ToInt32(Console.ReadLine());
                 Console.Clear();
 
-                ExibirCabecalho();
+                StringsDeSistema.ExibirCabecalho();
 
                 if (numeroDigitado > 0)
                     break;
@@ -85,17 +78,5 @@
             Console.WriteLine();
         }
 
-        public static void MensagemDiamante()
-        {
-            Console.WriteLine($"Você está vendo o Diamante de X do numero: {numeroDigitado}");
-        }
-
-        public static void MensagemFinal()
-        {
-            Console.WriteLine("--------------------------------------");
-            Console.WriteLine("Obrigado por utilizar o Diamante de X!");
-            Console.WriteLine("Pressione qualquer tecla para sair...");
-            Console.ReadKey();
-        }
     }
 }

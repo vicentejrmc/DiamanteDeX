@@ -5,35 +5,34 @@
         public static int numeroDigitado;
         static void Main(string[] args)
         {
-
             while (true)
             {
-                Functions.ExibirCabecalho();
+                StringsDeSistema.ExibirCabecalho();
 
-                numeroDigitado = Functions.LerNumero();
-                Console.WriteLine();
+                numeroDigitado = Diamante.LerNumero();
 
-                bool numeroValido = false;
-                while (numeroValido == false)
-                {                 
-                    numeroDigitado = Functions.NumeroEhPositivo();
+                while (true)
+                {
+                    numeroDigitado = Diamante.NumeroEhPositivo();
 
-                    numeroDigitado = Functions.ValidarNumeroImpar();
+                    numeroDigitado = Diamante.ValidarNumeroImpar();
 
-                    if(numeroDigitado % 2 != 0 && numeroDigitado > 0)
-                        numeroValido = true;
+                    if (numeroDigitado % 2 != 0 && numeroDigitado > 0)
+                        break;
                 }
 
-            Functions.ApresentarDiamante();
+                StringsDeSistema.MensagemDiamante(numeroDigitado);
 
-            Console.Write("Deseja Tentar um novo Diamante? S/N: ");
-            string TentarUmNovo = Console.ReadLine()!.ToUpper();
+                Diamante.ApresentarDiamante();
 
-            if (TentarUmNovo != "S")
-                break;
+                Console.Write("Deseja Tentar um novo Diamante? S/N: ");
+                string TentarUmNovo = Console.ReadLine()!.ToUpper();
+
+                if (TentarUmNovo != "S")
+                    break;
             }
 
-            Functions.MensagemFinal();
+            StringsDeSistema.MensagemFinal();
         }
     }
 }
