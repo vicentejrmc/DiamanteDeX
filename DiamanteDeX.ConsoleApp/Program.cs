@@ -15,7 +15,7 @@
                 {
                     numeroDigitado = Diamante.NumeroEhPositivo();
 
-                    numeroDigitado = Diamante.ValidarNumeroImpar();
+                    numeroDigitado = Diamante.NumeroEhImpar();
 
                     if (numeroDigitado % 2 != 0 && numeroDigitado > 0)
                         break;

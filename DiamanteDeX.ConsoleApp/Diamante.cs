@@ -12,7 +12,7 @@
             return numeroDigitado;
         }
 
-        public static int ValidarNumeroImpar()
+        public static int NumeroEhImpar()
         {
             bool numeroImpar = numeroDigitado % 2 == 0;
 
