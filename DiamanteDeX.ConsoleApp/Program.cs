@@ -10,36 +10,36 @@
 
         static void Main(string[] args)
         {
+            int numeroDigitado = 0;
+
             while (true)
             {
-                ExibirCabecalho();
+                Functions.ExibirCabecalho();
 
-                Console.Write("Digite um número ímpar: ");
-                int numeroDigitado = Convert.ToInt32(Console.ReadLine());
+                Console.Write("Digite um número ímpar Positivo: ");
+                numeroDigitado = Convert.ToInt32(Console.ReadLine());
                 Console.WriteLine();
 
-                numeroDigitado = Functions.NumeroEhPositivo(numeroDigitado);
+                bool numeroValido = false;
+                while (numeroValido == false)
+                {                 
+                    numeroDigitado = Functions.NumeroEhPositivo(numeroDigitado);
 
-                numeroDigitado = Functions.ValidarNumeroImpar(numeroDigitado);
+                    numeroDigitado = Functions.ValidarNumeroImpar(numeroDigitado);
 
-                Functions.ApresentarDiamante(numeroDigitado);
+                    if(numeroDigitado % 2 != 0 && numeroDigitado > 0)
+                        numeroValido = true;
+                }
 
-                Console.Write("Deseja Tentar um novo Diamante? S/N: ");
-                string TentarUmNovo = Console.ReadLine().ToUpper();
+            Functions.ApresentarDiamante(numeroDigitado);
 
-                if (TentarUmNovo != "S")
-                    break;
+            Console.Write("Deseja Tentar um novo Diamante? S/N: ");
+            string TentarUmNovo = Console.ReadLine()!.ToUpper();
+
+            if (TentarUmNovo != "S")
+                break;
             }
 
-
-           
-        }     
-        public static void ExibirCabecalho()
-        {
-            Console.Clear();
-            Console.WriteLine("-------------------------");
-            Console.WriteLine("----- Diamante de X -----");
-            Console.WriteLine("-------------------------\n");
         }
 
     }

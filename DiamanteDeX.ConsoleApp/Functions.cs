@@ -2,15 +2,28 @@
 {
     internal class Functions
     {
+
+
+        public static void ExibirCabecalho()
+        {
+            Console.Clear();
+            Console.WriteLine("-------------------------");
+            Console.WriteLine("----- Diamante de X -----");
+            Console.WriteLine("-------------------------\n");
+        }
+
         public static int ValidarNumeroImpar(int numeroDigitado)
         {
             bool numeroImpar = numeroDigitado % 2 == 0;
 
             while (numeroImpar)
             {
-                Console.Write("O numero digitado é invalido! digite um numero ÍMPAR: ");
+                Console.Write("Numero Inválido! digite um numero ÍMPAR: ");
                 numeroDigitado = Convert.ToInt32(Console.ReadLine());
                 numeroImpar = numeroDigitado % 2 == 0;
+                Console.Clear();
+
+                ExibirCabecalho();
             }
             return numeroDigitado;
         }
@@ -25,6 +38,9 @@
             {
                 Console.Write("Numero Invalido! Digite um numero Ímpar Positivo: ");
                 numeroDigitado = Convert.ToInt32(Console.ReadLine());
+                Console.Clear();
+
+                ExibirCabecalho();
 
                 if (numeroDigitado > 0)
                     break;
