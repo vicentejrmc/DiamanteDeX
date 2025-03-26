@@ -2,8 +2,7 @@
 {
     internal class Functions
     {
-
-
+        public static int numeroDigitado;
         public static void ExibirCabecalho()
         {
             Console.Clear();
@@ -12,7 +11,15 @@
             Console.WriteLine("-------------------------\n");
         }
 
-        public static int ValidarNumeroImpar(int numeroDigitado)
+        public static int LerNumero()
+        {
+            Console.Write("Digite um número ímpar Positivo: ");
+            numeroDigitado = Convert.ToInt32(Console.ReadLine());
+
+            return numeroDigitado;
+        }
+
+        public static int ValidarNumeroImpar()
         {
             bool numeroImpar = numeroDigitado % 2 == 0;
 
@@ -28,7 +35,7 @@
             return numeroDigitado;
         }
 
-        public static int NumeroEhPositivo(int numeroDigitado)
+        public static int NumeroEhPositivo()
         {
             bool numeroEhPositivo = true;
             if (numeroDigitado > 0)
@@ -48,7 +55,7 @@
             return numeroDigitado;
         }
 
-        public static void ApresentarDiamante(int numeroDigitado)
+        public static void ApresentarDiamante()
         {
             int espacoEmBranco = numeroDigitado / 2;
             int escreverX = 1;
@@ -76,6 +83,19 @@
             }
 
             Console.WriteLine();
+        }
+
+        public static void MensagemDiamante()
+        {
+            Console.WriteLine($"Você está vendo o Diamante de X do numero: {numeroDigitado}");
+        }
+
+        public static void MensagemFinal()
+        {
+            Console.WriteLine("--------------------------------------");
+            Console.WriteLine("Obrigado por utilizar o Diamante de X!");
+            Console.WriteLine("Pressione qualquer tecla para sair...");
+            Console.ReadKey();
         }
     }
 }
